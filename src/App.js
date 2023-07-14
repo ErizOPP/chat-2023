@@ -79,7 +79,8 @@ function ChatRoom() {
   const sendMessage = async (e) => {
     e.preventDefault();
 
-    const { uid, photoURL, displayName } = auth.currentUser;
+    const { uid, photoURL } = auth.currentUser;
+    const displayName = auth.currentUser.displayName;
 
     await messagesRef.add({
       text: formValue,
